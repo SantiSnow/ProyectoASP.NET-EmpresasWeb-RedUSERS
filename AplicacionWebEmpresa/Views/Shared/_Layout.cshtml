@@ -1,46 +1,85 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AplicacionWebEmpresa</title>
+    <title>AplicacionWeb - Mi Empresa</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        input {
+            margin-bottom: 2%;
+        }
+
+        .jumbotron {
+            background-color: rgba(0,0,0,0.8);
+            background-image: url('background.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .mi-hr {
+            height: 3px;
+            color: black;
+        }
+
+        .form-control {
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-radius: 0px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AplicacionWebEmpresa</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Mi Empresa</h1>
+            <p class="lead">Bienvenido al sistema de búsqueda de servicios y sucursales.</p>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - AplicacionWebEmpresa - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    @RenderBody()
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <h4>
+                    Titulo pie de pagina
+                </h4>
+                <p>
+                    <small>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate dolores exercitationem
+                        facilis quibusdam, quis voluptatem, obcaecati tempore quaerat sint nulla sequi, illo unde
+                        ducimus recusandae perferendis dicta odio quisquam non?
+                    </small>
+                </p>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <h4>
+                    Titulo pie de pagina
+                </h4>
+                <small>
+                    <ul>
+                        <li>Info 1</li>
+                        <li>Info 2</li>
+                        <li>Info 3</li>
+                    </ul>
+                </small>
+            </div>
         </div>
-    </footer>
+    </div>
+
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using AplicacionWebEmpresa.Models;
 
 namespace AplicacionWebEmpresa.Data
 {
@@ -12,5 +13,6 @@ namespace AplicacionWebEmpresa.Data
             : base(options)
         {
         }
+        public DbSet<AplicacionWebEmpresa.Models.Sucursal> Sucursal { get; set; }
     }
 }
