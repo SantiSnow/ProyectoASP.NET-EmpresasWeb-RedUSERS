@@ -13,6 +13,7 @@ namespace AplicacionWebEmpresa.Data.Migrations
                     Id = table.Column<int>(nullable: false).Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(nullable: false),
                     Precio = table.Column<string>(nullable: false),
+                    SucursalId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {

@@ -2,29 +2,48 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <form class="form-signin">
-                <h1 class="h3 mb-3 font-weight-normal">Por favor, inicie sesión</h1>
-                <label for="inputEmail" class="sr-only">Email</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <div class="checkbox">
-                    <label><input type="checkbox" value="remember-me"> Recuerdame</label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-                <p class="mt-5 mb-3 text-muted text-center"><a href="">Continuar sin login</a></p>
-            </form>
-        </div>
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <h2>Buscar sucursales</h2>
+
+        <p>
+            En esta sección puedes buscar distintas sucursales de nuestra compania, donde encontrar los mejores
+            servicios del mercado, en todo el mundo...
+        </p>
+
+        <a asp-controller="Sucursals" asp-action="Search" class="btn btn-primary">Buscar sucursales</a>
+
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+        <h2>Buscar servicios</h2>
+
+        <p>
+            En esta sección puedes buscar entre una gran variedad de servicios que ofrecemos en todo el mundo, con
+            los mejores precios del mercado y disponibles para todo el mundo...
+        </p>
+
+        <a asp-controller="Servicios" asp-action="Search" class="btn btn-primary">Buscar servicios</a>
+        <br /><br />
+    </div>
+</div>
+<br />
+<br />
+<div class="row justify-content-center">
+    <h4>O si lo desea puede...</h4>
+</div>
+<br />
+<br />
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <h5>Ver todas las sucursales</h5>
+        <a asp-controller="Sucursals" class="btn btn-primary">Sucursales</a>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <h5>Ver todos los servicios</h5>
+        <a asp-controller="Servicios" class="btn btn-primary">Servicios</a>
     </div>
 </div>
 
 <br>
-<br>
-
-<div class="container">
-    <hr class="mi-hr">
-</div>
 <br>

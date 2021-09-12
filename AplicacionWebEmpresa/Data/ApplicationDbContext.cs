@@ -14,5 +14,6 @@ namespace AplicacionWebEmpresa.Data
         {
         }
         public DbSet<AplicacionWebEmpresa.Models.Sucursal> Sucursal { get; set; }
+        public DbSet<AplicacionWebEmpresa.Models.Servicio> Servicio { get; set; }
     }
 }

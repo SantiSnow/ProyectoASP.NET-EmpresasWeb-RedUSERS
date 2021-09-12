@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AplicacionWebEmpresa.Data;
 using AplicacionWebEmpresa.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AplicacionWebEmpresa.Controllers
 {
@@ -26,6 +27,7 @@ namespace AplicacionWebEmpresa.Controllers
         }
 
         // GET: Sucursals/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,6 +36,7 @@ namespace AplicacionWebEmpresa.Controllers
             }
 
             var sucursal = await _context.Sucursal
+                .Include(s => s.Servicios)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (sucursal == null)
             {
@@ -44,9 +47,37 @@ namespace AplicacionWebEmpresa.Controllers
         }
 
         // GET: Sucursals/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
+        }
+
+        //GET busqueda
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        public string GetUserData()
+        {
+            var userName = User.Identity.Name;
+
+            if (userName == "aguirresantiago81@gmail.com")
+            {
+                return "usuario administrador";
+            }
+            else
+            {
+                return "Usuario normal";
+            }
+        }
+        
+        //POST
+        public async Task<IActionResult> SearchResult(String search)
+        {
+            return View("Index", await _context.Sucursal.Where(s => s.Nombre
+                .Contains(search)).ToListAsync());
         }
 
         // POST: Sucursals/Create

@@ -13,7 +13,7 @@
 
         .jumbotron {
             background-color: rgba(0,0,0,0.8);
-            background-image: url('background.jpg');
+            background-image: url(/img/skyscrapers.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -34,6 +34,10 @@
             border-right: 0px;
             border-radius: 0px;
         }
+
+        #footer{
+            margin-top: 10%;
+        }
     </style>
 </head>
 <body>
@@ -41,14 +45,19 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Mi Empresa</h1>
-            <p class="lead">Bienvenido al sistema de búsqueda de servicios y sucursales.</p>
+            <h1 class="display-4 white">Mi Empresa</h1>
+            <p class="lead white">Bienvenido al sistema de búsqueda de servicios y sucursales.</p>
         </div>
     </div>
 
-    @RenderBody()
-
     <div class="container">
+        @RenderBody()
+    </div>
+
+    <div class="container" id="footer">
+
+        <hr class="mi-hr">
+        <br>
         <div class="row justify-content-center">
             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <h4>

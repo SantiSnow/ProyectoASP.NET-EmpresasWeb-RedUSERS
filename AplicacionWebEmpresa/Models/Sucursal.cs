@@ -18,6 +18,7 @@ namespace AplicacionWebEmpresa.Models
         public string Telefono { get; set; }
         public string Ciudad { get; set; }
         public int Empleados { get; set; }
+        public List<Servicio> Servicios { get; set; }
 
     }
 }

@@ -4,43 +4,60 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 
-<div>
-    <h4>Sucursal</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ciudad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ciudad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Empleados)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Empleados)
-        </dd>
-    </dl>
+            <h1>@Html.DisplayFor(model => model.Nombre)</h1>
+            <img src="/img/silhouette-confident-businesspeople.jpg" style="width: 80%;" id="producto">
+            <p>
+                Sucursal con dirección en @Html.DisplayFor(model => model.Direccion),
+                ubicada en la ciudad de @Html.DisplayFor(model => model.Ciudad). Puede comunicarse con la
+                misma, llamando al teléfono que le ofrecemos en la tabla siguiente.
+            </p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h4>Datos Extra</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Empleados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-sm-10">
+                            @Html.DisplayFor(model => model.Nombre)
+                        </td>
+                        <td class="col-sm-10">
+                            @Html.DisplayFor(model => model.Direccion)
+                        </td>
+                        <td class="col-sm-10">
+                            @Html.DisplayFor(model => model.Telefono)
+                        </td>
+                        <td class="col-sm-10">
+                            @Html.DisplayFor(model => model.Empleados)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h4>Lista de servicios de la sucursal</h4>
+            <dl>
+                @foreach (var item in Model.Servicios)
+                {
+                    <dt> Nombre: @item.Nombre </dt>
+                    <dd> Precio: @item.Precio </dd>
+                }
+            </dl>
+        </div>
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
